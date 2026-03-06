@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block title %}Horizon — Logística Global de Precisión{% endblock %}
+{% block body_class %}home{% endblock %}
+{% block content %}
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">// Logística Global — Activo 24/7</div>
+    <h1>Mueve el<br>Mundo<br>con <em>Precisión</em></h1>
+    <p class="hero-sub">
+      Supply chain de alto nivel. Tracking en tiempo real.<br>
+      Rutas optimizadas para cada carga.
+    </p>
+    <div class="hero-actions">
+      <a href="{{ url_for('registro') }}" class="btn btn-primary">Ver Rutas →</a>
+      <a href="{{ url_for('rastrear') }}" class="btn btn-secondary">Rastrear Envío</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">25K+</span><span class="stat-label">Envíos completados</span></div>
+      <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Tasa de entrega</span></div>
+      <div class="stat"><span class="stat-num">42</span><span class="stat-label">Países alcanzados</span></div>
+      <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Clientes activos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES STRIPE ═══ -->
+<div class="features-stripe">
+  <div class="feature-item">
+    <div class="feature-item-icon">🚛</div>
+    <div class="feature-item-title">Flota Propia</div>
+    <div class="feature-item-text">+200 vehículos en toda Colombia</div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-icon">📍</div>
+    <div class="feature-item-title">Rastreo GPS</div>
+    <div class="feature-item-text">Monitoreo en tiempo real 24/7</div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-icon">🛡️</div>
+    <div class="feature-item-title">Carga Asegurada</div>
+    <div class="feature-item-text">Cobertura total en todos los envíos</div>
+  </div>
+  <div class="feature-item">
+    <div class="feature-item-icon">⚡</div>
+    <div class="feature-item-title">Entrega Express</div>
+    <div class="feature-item-text">Misma ciudad: 4 horas garantizadas</div>
+  </div>
+</div>
+
+<!-- ═══ SERVICIOS ═══ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">// Lo que hacemos</div>
+    <h2 class="section-title">Servicios Diseñados<br>para tu Operación</h2>
+    <p class="section-sub">Desde un sobre hasta una carga completa, contamos con la infraestructura y el equipo humano para moverlo.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-icon">🚛</div>
+        <div class="service-card-title">Carga Terrestre</div>
+        <p class="service-card-text">Red de transporte nacional con rutas optimizadas y control de temperatura para mercancía especial.</p>
+        <a href="{{ url_for('carga_terrestre') }}" class="service-card-link">Conocer más →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">✈️</div>
+        <div class="service-card-title">Carga Aérea</div>
+        <p class="service-card-text">Conexiones directas con los principales aeropuertos de Colombia y el mundo para envíos urgentes.</p>
+        <a href="{{ url_for('carga_aerea') }}" class="service-card-link">Conocer más →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🚢</div>
+        <div class="service-card-title">Carga Marítima</div>
+        <p class="service-card-text">Soluciones de contenedor completo (FCL) y carga consolidada (LCL) para comercio internacional.</p>
+        <a href="{{ url_for('carga_maritima') }}" class="service-card-link">Conocer más →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🏭</div>
+        <div class="service-card-title">Almacenamiento</div>
+        <p class="service-card-text">Bodegas estratégicas en las principales ciudades con gestión de inventario en tiempo real.</p>
+        <a href="{{ url_for('almacenamiento') }}" class="service-card-link">Conocer más →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">⚡</div>
+        <div class="service-card-title">Envío Express</div>
+        <p class="service-card-text">Entregas en el mismo día dentro de la ciudad. Garantizamos tiempos o devolvemos tu dinero.</p>
+        <a href="{{ url_for('express') }}" class="service-card-link">Conocer más →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">📍</div>
+        <div class="service-card-title">Rastreo Inteligente</div>
+        <p class="service-card-text">Tecnología GPS avanzada con notificaciones automáticas y panel de control en tiempo real.</p>
+        <a href="{{ url_for('rastreo_servicio') }}" class="service-card-link">Conocer más →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA COTIZADOR ═══ -->
+<section class="section section--alt">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-tag" style="justify-content:center;display:flex;">// Precio en segundos</div>
+    <h2 class="section-title">¿Cuánto cuesta<br>tu envío?</h2>
+    <p class="section-sub" style="margin:1rem auto 2.5rem;">Obtén una cotización instantánea sin registro. Ingresa origen, destino y peso.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="{{ url_for('cotizador') }}" class="btn btn-primary" style="font-size:1rem;padding:1rem 2.5rem;">Cotizar Ahora →</a>
+      <a href="{{ url_for('contacto') }}" class="btn btn-secondary" style="font-size:1rem;padding:1rem 2.5rem;">Hablar con un Asesor</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ POR QUÉ HORIZON ═══ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">// Por qué elegirnos</div>
+    <h2 class="section-title">La Diferencia<br>Horizon</h2>
+    <div class="cards-grid" style="margin-top:3rem;">
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <div class="card-title">Precisión Garantizada</div>
+        <p class="card-text">98% de entregas a tiempo durante los últimos 5 años consecutivos. Tu operación no puede esperar.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <div class="card-title">Tecnología Integrada</div>
+        <p class="card-text">API propia, tracking en tiempo real y panel de control para tu equipo. Logística digital del siglo XXI.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌎</div>
+        <div class="card-title">Cobertura Total</div>
+        <p class="card-text">42 países, 800 municipios en Colombia. Si existe una ruta, nosotros la tenemos cubierta.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <div class="card-title">Soporte 24/7</div>
+        <p class="card-text">Equipo humano disponible en todo momento. Respuesta garantizada en menos de 15 minutos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
